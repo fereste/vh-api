@@ -8,6 +8,10 @@ let database = [];
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('VH API funcionando ' + new Date().toLocaleString('es'));
+});
+
 app.post('/orders', (req, res) => {
     database.push({
         id: req.body.id,
